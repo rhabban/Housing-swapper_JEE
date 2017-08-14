@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  id="WebApp_ID"
+  version="3.0">
+
+<welcome-file-list>
+  <welcome-file>toc.jsp</welcome-file>
+</welcome-file-list>
+
+<!-- TEST Page -->
+<servlet>
+  <servlet-name>MainController</servlet-name>
+  <servlet-class>com.devoir.MainController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MainController</servlet-name>
+  <url-pattern>/test</url-pattern>
+</servlet-mapping>
+
+<!-- User login -->
+<servlet>
+  <servlet-name>UserController</servlet-name>
+  <servlet-class>com.devoir.UserController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>UserController</servlet-name>
+  <url-pattern>/login</url-pattern>
+</servlet-mapping>
+
+<!-- Home -->
+<servlet>
+  <servlet-name>HomeController</servlet-name>
+  <servlet-class>com.devoir.HomeController</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>HomeController</servlet-name>
+  <url-pattern>/home</url-pattern>
+</servlet-mapping>
+
+<!-- Add Housing -->
+<servlet>
+  <servlet-name>AddHouse</servlet-name>
+  <jsp-file>/pages/housing/addHouse.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>AddHouse</servlet-name>
+  <url-pattern>/add/house</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>AddFlat</servlet-name>
+  <jsp-file>/pages/housing/addFlat.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>AddFlat</servlet-name>
+  <url-pattern>/add/flat</url-pattern>
+</servlet-mapping>
+
+<!-- Edit Housing -->
+<servlet>
+  <servlet-name>EditHouse</servlet-name>
+  <jsp-file>/pages/housing/editHouse.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>EditHouse</servlet-name>
+  <url-pattern>/edit/house</url-pattern>
+</servlet-mapping>
+
+<!-- Delete Housing -->
+<servlet>
+  <servlet-name>DeleteHouse</servlet-name>
+  <servlet-class>com.devoir.DeleteHousingServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>DeleteHouse</servlet-name>
+  <url-pattern>/delete/housing</url-pattern>
+</servlet-mapping>
+
+<!-- User -->
+<servlet>
+  <servlet-name>Users</servlet-name>
+  <jsp-file>/pages/user/list.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Users</servlet-name>
+  <url-pattern>/users</url-pattern>
+</servlet-mapping>
+
+<!-- Save User -->
+<servlet>
+  <servlet-name>SaveUser</servlet-name>
+  <servlet-class>com.devoir.AddUserServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>SaveUser</servlet-name>
+  <url-pattern>/save/user</url-pattern>
+</servlet-mapping>
+
+<!-- Log User -->
+<servlet>
+  <servlet-name>LogUser</servlet-name>
+  <servlet-class>com.devoir.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>LogUser</servlet-name>
+  <url-pattern>/login/authenticate</url-pattern>
+</servlet-mapping>
+
+<!-- LogOut User -->
+<servlet>
+  <servlet-name>LogoutUser</servlet-name>
+  <servlet-class>com.devoir.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>LogoutUser</servlet-name>
+  <url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<!-- Offer -->
+<servlet>
+  <servlet-name>Offers</servlet-name>
+  <jsp-file>/pages/offers/list.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>Offers</servlet-name>
+  <url-pattern>/offers</url-pattern>
+</servlet-mapping>
+
+<!-- Add Offer -->
+<servlet>
+  <servlet-name>AddOffer</servlet-name>
+  <jsp-file>/pages/offers/add.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>AddOffer</servlet-name>
+  <url-pattern>/add/offer</url-pattern>
+</servlet-mapping>
+
+<!-- Save Offer -->
+<servlet>
+  <servlet-name>SaveOffer</servlet-name>
+  <jsp-file>com.devoir.AddOfferServlet</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>SaveOffer</servlet-name>
+  <url-pattern>/save/offer</url-pattern>
+</servlet-mapping>
+
+<!-- Save Housing -->
+<servlet>
+  <servlet-name>SaveHouse</servlet-name>
+  <servlet-class>com.devoir.AddHousingServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>SaveHouse</servlet-name>
+  <url-pattern>/save/house</url-pattern>
+</servlet-mapping>
+
+
+<!-- My Housing -->
+<servlet>
+  <servlet-name>MyHousing</servlet-name>
+  <jsp-file>/pages/my_housing.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyHousing</servlet-name>
+  <url-pattern>/my_housing</url-pattern>
+</servlet-mapping>
+
+<!-- My Offers -->
+<servlet>
+  <servlet-name>MyOffers</servlet-name>
+  <jsp-file>/pages/my_offers.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MyOffers</servlet-name>
+  <url-pattern>/my_offers</url-pattern>
+</servlet-mapping>
+
+
+
+<!-- Env -->
+<!-- TODO :: INSERT DATABASE DATA -->
+<env-entry>
+  <env-entry-name>host</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>__HOST__</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>database</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>__DATABASE__</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>username</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>__USERNAME__</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>password</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>__PASSWORD__</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>housingTable</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>housing</env-entry-value>
+</env-entry>
+
+<env-entry>
+  <env-entry-name>offerTable</env-entry-name>
+  <env-entry-type>java.lang.String</env-entry-type>
+  <env-entry-value>offers</env-entry-value>
+</env-entry>
+
+
+</web-app>
